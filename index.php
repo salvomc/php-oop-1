@@ -16,7 +16,7 @@
         public $length;
         public $rating;
         
-        public function __construct($title, $year, $genre, $lenght)
+        public function __construct($title, $year, $genre, $length)
         {
             $this->title = $title;
             $this->year = $year;
@@ -37,4 +37,20 @@
                 return $genres_string; 
         }
     }
+
+    $genres = 
+    [
+        new Genre('Fantascienza'),
+        new Genre('Comedy'),
+        new Genre('Azione')
+    ];
+    
+    $ride_along = new Movie('Ride Along', $genres, 100, '2014');
+    $ride_along->rating = 7;
+
+    $the_avengers = new Movie('The Avengers', $genres, 143, '2012');
+
+    echo $ride_along->getMovieDetails();
+    echo "<br/>";
+    echo $the_avengers->getMovieDetails();
 ?>
